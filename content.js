@@ -5,22 +5,25 @@ window.onload = function(){
   var url = window.location.href.split("/")[4];
   var button = document.getElementsByClassName("ytd-subscribe-button-renderer")[0];
   if (button == null){
-    CheckAge();
+    if (InYoutube(url)){
+      console.log("No Button but in YouTube");
+      CheckAge();
+    }
     return;
   }
   var status = button.getAttribute("subscribed");
 
 
-  if ((url=="UC-lHJZR3Gqxm24_Vd_AJ5Yw" || url=="PewDiePie") && status == null){
-    console.log("2");
+  if (InPewdsChannel(url) && status == null){
+    console.log("In Pewds Channel and not subscribed");
     button.click();
   }
-  else if (window.location.href.indexOf("www.youtube.com") != -1 && (url !="UC-lHJZR3Gqxm24_Vd_AJ5Yw" || url !="PewDiePie")){
-    console.log("1");
+  else if (InYoutube(url) && !InPewdsChannel(url)){
+    console.log("In Youtube but not in Pewds Channel");
     CheckAge();
   }
-  else if (window.location.href.indexOf("www.youtube.com") != -1){
-    console.log("3");
+  else if (InYoutube()){
+    console.log("In Youtube other pages");
     var owner = document.querySelector("#owner-name>a");
     if (owner == null){
       CheckAge();
@@ -33,6 +36,14 @@ window.onload = function(){
       CheckAge();
     }
   }
+}
+
+function InYoutube(url){
+  return window.location.href.indexOf("www.youtube.com") != -1;
+}
+
+function InPewdsChannel(url){
+  return url == "UC-lHJZR3Gqxm24_Vd_AJ5Yw" || url == "PewDiePie";
 }
 
 function CheckAge(){
