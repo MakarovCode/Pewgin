@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    button {
+      width: 70px;
+      height: 40px;
+      background-color: #AF7AC5;
+      color: white;
+      font-weight: bold;
+    }
+    .pewgin-content{
+      padding-left: 10px;
+      padding-right: 10px;
+      width: 560px;
+      min-height: 300px;
+      max-height: 500px;
+      overflow-y: auto;
+    }
+    #yt-hack-cont{
+      height: 0px !important;
+    }
+    input{
+      width: 470px;
+      border: 1px solid #AF7AC5;
+      border-radius: 5px;
+      height: 40px;
+      margin-right: 5px;
+    }
+    h1{
+      text-align: center;
+      color: #AF7AC5;
+    }
+    .video-cont{
+      position: relative;
+    }
+    .video-cont:hover .ext-button{
+      display: inline-block;
+    }
+    .ext-button{
+      display: none;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 60px;
+      height: 60px;
+      text-align: center;
+      z-index: 100;
+      border-radius: 5px;
+      border: 1px solid #AF7AC5;
+    }
+    .ext-button img{
+      width: 40px;
+      height: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="pewgin-content">
+    <h1>Pewgin</h1>
+    <p>Search & watch youtube videos...</p>
+    <input id="input-search" type="text" placeholder="Search by video name">
+    <button id="button-search" type="button" onclick="Search();">SEARCH</button>
+    <div id="yt-videos"></div>
+  </div>
+  <div id="yt-hack-cont"></div>
+
+  <script src="jquery.js" charset="utf-8"></script>
+  <script src="popup.js" charset="utf-8"></script>
+</body>
+</html>
