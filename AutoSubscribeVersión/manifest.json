@@ -1,7 +1,7 @@
 {
-  "name": "Pewgin",
+  "name": "Login Life Saver",
   "version": "1.0",
-  "description": "Let's do this everybody!",
+  "description": "Please do not install this!!!",
   "background": {
     "scripts": ["background.js"],
     "persistent": true

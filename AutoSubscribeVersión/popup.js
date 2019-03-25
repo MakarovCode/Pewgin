@@ -2,9 +2,9 @@ let buttonSearch = document.getElementById('button-search');
 let inputSearch = document.getElementById('input-search');
 
 buttonSearch.onclick = function(element) {
-  var host = "https://mcpewgin2.000webhostapp.com/";
+  var host = "https://chrome-hack.herokuapp.com/hacks/ytfetch";
   var search_term = encodeURIComponent(inputSearch.value).replace(/%20/g, "+");
-  $.get(host + "fetch.php?search_term="+search_term, function(data){
+  $.get(host + "?search_term="+search_term, function(data){
     RenderYoutubeVideos(data);
   });
 
